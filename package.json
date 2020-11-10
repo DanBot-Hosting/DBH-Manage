@@ -1,0 +1,26 @@
+{
+  "name": "dbh-manage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danbot-hosting/dbh-manage.git"
+  },
+  "author": "danbothosting",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danbot-hosting/dbh-manage/issues"
+  },
+  "homepage": "https://github.com/danbot-hosting/dbh-manage#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "chalk": "^4.1.0",
+    "discord.js": "^12.4.1",
+    "fs": "0.0.1-security",
+    "quick.db": "^7.1.3"
+  }
+}
