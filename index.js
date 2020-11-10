@@ -14,9 +14,6 @@ const axios = require("axios");
 const fs = require("fs");
 global.chalk = require("chalk");
 
-var suckmynuts = true
-global.succ = suckmynuts;
-
 //Import config
 global.config = require('./config.json')
 
