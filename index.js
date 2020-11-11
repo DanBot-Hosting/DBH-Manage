@@ -7,8 +7,9 @@ Free Hosting for ever!                                            /____/
 */
 
 //Package Imports
-const Discord = require("discord.js");
+global.Discord = require("discord.js");
 global.client = new Discord.Client({ disableEveryone: true });
+global.humanizeDuration = require('humanize-duration');
 const db = require("quick.db");
 const axios = require("axios");
 const fs = require("fs");
