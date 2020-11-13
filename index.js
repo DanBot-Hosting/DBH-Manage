@@ -11,7 +11,7 @@ global.Discord = require("discord.js");
 global.client = new Discord.Client({ disableEveryone: true });
 global.humanizeDuration = require('humanize-duration');
 const db = require("quick.db");
-const axios = require("axios");
+global.axios = require("axios");
 const fs = require("fs");
 global.chalk = require("chalk");
 
@@ -33,3 +33,28 @@ fs.readdir('./events/', (err, files) => {
 
 //Bot login
 client.login(config.DiscordBot.Token);
+
+
+
+/*
+const axios = require('axios');
+
+const data = {
+    "user": "137624084572798976"
+}
+    axios({
+        url: "http://danbot.host/external/fetch",
+        method: 'GET',
+        followRedirect: true,
+        maxRedirects: 5,
+        headers: {
+            "password": config.Misc.externalPassword
+        },
+        data: data
+    }).then(response => {
+        console.log(response.data.all)
+    }).catch(error => {
+        message.channel.send("Error: DanBot Hosting bot is offline. Please try again later!")
+    });
+
+*/
