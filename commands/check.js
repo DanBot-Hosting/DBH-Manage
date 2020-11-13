@@ -1,5 +1,5 @@
 exports.run = async (client, message, args) => {
-    message.channel.send('Checking if this account is linked \n\n*This could take a few seconds*').then((msg) => 
+    message.channel.send('Checking if this account is linked \n\n*This could take a few seconds*').then((msg) => {
     axios({
         url: "http://danbot.host/external/fetch",
         method: 'GET',
@@ -24,5 +24,6 @@ exports.run = async (client, message, args) => {
         }
     }).catch(error => {
         msg.edit("Error: DanBot Hosting bot is offline. Please try again later!")
-    }));
+    })
+});
 };
