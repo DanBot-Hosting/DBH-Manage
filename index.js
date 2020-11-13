@@ -34,8 +34,6 @@ fs.readdir('./events/', (err, files) => {
 //Bot login
 client.login(config.DiscordBot.Token);
 
-
-
 /*
 const axios = require('axios');
 
