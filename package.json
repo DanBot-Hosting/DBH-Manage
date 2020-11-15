@@ -22,6 +22,7 @@
     "discord.js": "^12.4.1",
     "fs": "0.0.1-security",
     "humanize-duration": "^3.24.0",
+    "prettysize": "^2.0.0",
     "quick.db": "^7.1.3"
   }
 }

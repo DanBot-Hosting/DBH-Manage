@@ -29,7 +29,7 @@ exports.run = async (client, message, args) => {
                 }).then(response => {
                     const preoutput = response.data.attributes.relationships.servers.data
                     arr.push(...preoutput)
-                    console.log(preoutput)
+                    //console.log(preoutput)
                     setTimeout(() => {
                         var clean = arr.map(e => "Server Name: `" + e.attributes.name + "`, Server ID: `" + e.attributes.identifier + "`\n")
                         let embed = new Discord.MessageEmbed()
