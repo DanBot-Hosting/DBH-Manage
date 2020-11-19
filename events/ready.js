@@ -1,4 +1,5 @@
 const exec = require('child_process').exec;
+const DanBotHosting = require("danbot-hosting");
 module.exports = async (client, guild, files) => {
 
     //Login message
@@ -33,4 +34,14 @@ module.exports = async (client, guild, files) => {
             }
         })
     }, 30000)
+
+    //Post to DBH
+    const API = new DanBotHosting.Client(config.Misc.DBHkey, client);
+ 
+    // Start posting
+    let initalPost = await API.autopost();
+ 
+    if (initalPost) {
+        console.log(initalPost);
+    }
 }

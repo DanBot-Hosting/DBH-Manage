@@ -19,6 +19,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "chalk": "^4.1.0",
+    "danbot-hosting": "^0.1.6",
     "discord.js": "^12.4.1",
     "fs": "0.0.1-security",
     "humanize-duration": "^3.24.0",
