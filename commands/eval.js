@@ -61,7 +61,7 @@ exports.run = async (client, message) => {
                     return fs.writeFile(`eval.txt`, `${clean(err)}`);
                 }
             }
-            let evalcode = new Discord.RichEmbed()
+            let evalcode = new Discord.MessageEmbed()
                 .setAuthor(`Eval by ${message.author.tag}`, `https://cdn.discordapp.com/emojis/314405560701419520.png`)
                 .setDescription(`**:inbox_tray: Input:**\n\n\`\`\`js\n${cont}\`\`\``, true)
                 .addField(`\u200b`, `**:outbox_tray: Output:**\n\n\`\`\`js\n${clean(evaled)}\`\`\``, true)
@@ -71,7 +71,7 @@ exports.run = async (client, message) => {
                 embed: evalcode
             }).catch(e => logger.error(e));
         } catch (err) {
-            let errorcode = new Discord.RichEmbed()
+            let errorcode = new Discord.MessageEmbed()
                 .setAuthor(`Eval by ${message.author.tag}`, `https://cdn.discordapp.com/emojis/314405560701419520.png`)
                 .setDescription(`**:inbox_tray: Input:**\n\n\`\`\`js\n${cont}\`\`\``, true)
                 .addField(`\u200b`, `**:outbox_tray: Output:**\`\`\`js\n${clean(err)}\`\`\``, true)
