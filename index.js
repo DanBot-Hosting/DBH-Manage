@@ -15,6 +15,10 @@ global.axios = require("axios");
 const fs = require("fs");
 global.chalk = require("chalk");
 
+//Custom pterodactyl modules
+global.serverCreate = require('./utils/pterodactyl/createServer'); // Createserver module 
+global.serverCreate_n4 = require('./utils/pterodactyl/createServer-N4'); // Createserver module for Node 4 only
+
 //Import config
 global.config = require('./config.json')
 
