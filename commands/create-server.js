@@ -48,7 +48,7 @@ exports.run = async (client, message, args) => {
     
     
             if (args[0] == "n4") {
-                if (Object.keys(types).includes(args[1].toLowerCase())) {
+                if (Object.keys(types).includes(args[2].toLowerCase())) {
         
                     axios({
                         url: "http://danbot.host/external/fetch",
@@ -66,8 +66,7 @@ exports.run = async (client, message, args) => {
                             msg.edit('That user does not have an account')
                         } else {
                             let data = serverCreateSettings.createParams(serverName, response.data.consoleID);
-                    if (args[1] == "aio" | args[1] == "java") {
-                        serverCreateSettings.createServer(types[args[1].toLowerCase()])
+                        serverCreateSettings.createServer(types[args[2].toLowerCase()])
                             .then(response => {
                                 let embed = new Discord.RichEmbed()
                                     .setColor(`GREEN`)
@@ -80,26 +79,11 @@ exports.run = async (client, message, args) => {
                             }).catch(error => {
                                 message.channel.send(new Discord.RichEmbed().setColor(`RED`).addField(`__**FAILED:**__`, error))
                             })
-                    } else {
-                        serverCreateSettings.createServer(types[args[1].toLowerCase()])
-                            .then(response => {
-                                let embed = new Discord.RichEmbed()
-                                    .setColor(`GREEN`)
-                                    .addField(`__**Status:**__`, response.statusText)
-                                    .addField(`__**Created for user ID:**__`, response.data.consoleID)
-                                    .addField(`__**Server name:**__`, serverName)
-                                    .addField(`__**Type:**__`, args[1].toLowerCase())
-                                message.channel.send(embed)
-                            }).catch(error => {
-                                message.channel.send(new Discord.RichEmbed().setColor(`RED`).addField(`__**FAILED:**__`, error))
-                                cooldown[message.author.id].nCreate = Date.now() + (10 * 1000)
-                            })
-                    }
                 }})
                 }
                 message.channel.send(helpEmbed)
             } else if (args[0] == "normal") {
-                if (Object.keys(types).includes(args[1].toLowerCase())) {
+                if (Object.keys(types).includes(args[2].toLowerCase())) {
         
                     axios({
                         url: "http://danbot.host/external/fetch",
@@ -117,35 +101,19 @@ exports.run = async (client, message, args) => {
                             msg.edit('That user does not have an account')
                         } else {
                             let data = serverCreateSettings.createParams(serverName, response.data.consoleID);
-                    if (args[1] == "aio" | args[1] == "java") {
-                        serverCreateSettings.createServer(types[args[1].toLowerCase()])
+                        serverCreateSettings.createServer(types[args[2].toLowerCase()])
                             .then(response => {
                                 let embed = new Discord.RichEmbed()
                                     .setColor(`GREEN`)
                                     .addField(`__**Status:**__`, response.statusText)
                                     .addField(`__**Created for user ID:**__`, response.data.consoleID)
                                     .addField(`__**Server name:**__`, serverName)
-                                    .addField(`__**Type:**__`, args[1].toLowerCase())
+                                    .addField(`__**Type:**__`, args[2].toLowerCase())
                                     .addField(`__**Created for user:**__`, )
                                 message.channel.send(embed)
                             }).catch(error => {
                                 message.channel.send(new Discord.RichEmbed().setColor(`RED`).addField(`__**FAILED:**__`, error))
                             })
-                    } else {
-                        serverCreateSettings.createServer(types[args[1].toLowerCase()])
-                            .then(response => {
-                                let embed = new Discord.RichEmbed()
-                                    .setColor(`GREEN`)
-                                    .addField(`__**Status:**__`, response.statusText)
-                                    .addField(`__**Created for user ID:**__`, response.data.consoleID)
-                                    .addField(`__**Server name:**__`, serverName)
-                                    .addField(`__**Type:**__`, args[1].toLowerCase())
-                                message.channel.send(embed)
-                            }).catch(error => {
-                                message.channel.send(new Discord.RichEmbed().setColor(`RED`).addField(`__**FAILED:**__`, error))
-                                cooldown[message.author.id].nCreate = Date.now() + (10 * 1000)
-                            })
-                    }
                 }})
                 }
                 message.channel.send(helpEmbed)
