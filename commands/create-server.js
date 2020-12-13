@@ -8,7 +8,7 @@ exports.run = async (client, message, args) => {
                 return;
             }
 
-            let helpEmbed = new Discord.RichEmbed()
+            let helpEmbed = new Discord.MessageEmbed()
             .setColor(`RED`).setDescription(`List of servers: (use ${config.DiscordBot.Prefix}server create <type> <name>)`)
             .addField(`__**Minecraft:**__`, "Forge \nPaper \nBedrock \nPocketmineMP", true)
             .addField(`__**Grand Theft Auto:**__`, "FiveM \nalt:V \nmultitheftauto \nRage.MP \nSA-MP", true)
@@ -68,16 +68,16 @@ exports.run = async (client, message, args) => {
                             let data = serverCreateSettings.createParams(serverName, response.data.consoleID);
                         serverCreateSettings.createServer(types[args[2].toLowerCase()])
                             .then(response => {
-                                let embed = new Discord.RichEmbed()
+                                let embed = new Discord.MessageEmbed()
                                     .setColor(`GREEN`)
                                     .addField(`__**Status:**__`, response.statusText)
                                     .addField(`__**Created for user ID:**__`, response.data.consoleID)
                                     .addField(`__**Server name:**__`, serverName)
-                                    .addField(`__**Type:**__`, args[1].toLowerCase())
+                                    .addField(`__**Type:**__`, args[2].toLowerCase())
                                     .addField(`__**Created for user:**__`, )
                                 message.channel.send(embed)
                             }).catch(error => {
-                                message.channel.send(new Discord.RichEmbed().setColor(`RED`).addField(`__**FAILED:**__`, error))
+                                message.channel.send(new Discord.MessageEmbed().setColor(`RED`).addField(`__**FAILED:**__`, error))
                             })
                 }})
                 }
@@ -103,7 +103,7 @@ exports.run = async (client, message, args) => {
                             let data = serverCreateSettings.createParams(serverName, response.data.consoleID);
                         serverCreateSettings.createServer(types[args[2].toLowerCase()])
                             .then(response => {
-                                let embed = new Discord.RichEmbed()
+                                let embed = new Discord.MessageEmbed()
                                     .setColor(`GREEN`)
                                     .addField(`__**Status:**__`, response.statusText)
                                     .addField(`__**Created for user ID:**__`, response.data.consoleID)
@@ -112,7 +112,7 @@ exports.run = async (client, message, args) => {
                                     .addField(`__**Created for user:**__`, )
                                 message.channel.send(embed)
                             }).catch(error => {
-                                message.channel.send(new Discord.RichEmbed().setColor(`RED`).addField(`__**FAILED:**__`, error))
+                                message.channel.send(new Discord.MessageEmbed().setColor(`RED`).addField(`__**FAILED:**__`, error))
                             })
                 }})
                 }
