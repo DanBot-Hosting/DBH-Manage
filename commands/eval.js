@@ -36,7 +36,7 @@ exports.run = async (client, message) => {
             }
             if (evaled.length > 2000) {
                 try {
-                    let evalcode1 = new Discord.RichEmbed()
+                    let evalcode1 = new Discord.MessageEmbed()
                         .setAuthor(`Eval by ${message.author.tag}`, `https://cdn.discordapp.com/emojis/314405560701419520.png`)
                         .setDescription(`**Input:**\n\n\`\`\`js\n${cont}\`\`\``, true)
                         .addField(`\u200b`, `**Output:**\n\n\`\`\`Output too long, logged to eval.txt`, true)
@@ -49,7 +49,7 @@ exports.run = async (client, message) => {
                     });
                     return fs.writeFile(`eval.txt`, `${clean(evaled)}`);
                 } catch (err) {
-                    let errorcode1 = new Discord.RichEmbed()
+                    let errorcode1 = new Discord.MessageEmbed()
                         .setAuthor(`Eval by ${message.author.tag}`, `https://cdn.discordapp.com/emojis/314405560701419520.png`)
                         .setDescription(`**Input:**\n\n\`\`\`js\n${cont}\`\`\``, true)
                         .addField(`\u200b`, `**Output:**\n\n\`\`\`js\nOutput too long, logged to ${__dirname}\\eval.txt\`\`\``, true)

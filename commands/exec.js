@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
       const end = process.hrtime(start);
 
       message.channel.send("", {
-        embed: new Discord.RichEmbed()
+        embed: new Discord.MessageEmbed()
           .setDescription("```" + response + "```")
           .setTimestamp()
           .setColor("RANDOM")
