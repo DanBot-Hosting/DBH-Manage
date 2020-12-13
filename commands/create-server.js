@@ -1,6 +1,5 @@
 exports.run = async (client, message, args) => {
     if (message.author.id == "137624084572798976") {
-        if (args[0].toLowerCase() == "create") {
             let target = message.guild.members.get(args[0].match(/[0-9]{18}/)[0])
 
             //Do server creation things
@@ -151,7 +150,6 @@ exports.run = async (client, message, args) => {
                 }
                 message.channel.send(helpEmbed)
             }
-        }
     } else {
         message.channel.send('For now this is a owner only command')
     }
