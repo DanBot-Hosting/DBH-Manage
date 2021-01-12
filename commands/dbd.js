@@ -1,7 +1,7 @@
 const serverCreateSettings = serverCreate_n4
 
 exports.run = async (client, message, args) => {
-    if (message.channel.id === "750866560687669358") {
+    if (message.channel.id === "773357374328012840") {
         axios({
             url: "http://danbot.host/external/fetch",
             method: 'GET',
