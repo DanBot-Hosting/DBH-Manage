@@ -1,16 +1,8 @@
-const execSync = require('child_process').execSync;
-const ms = require('ms');
 exports.run = async (client, message) => {
     let args = message.content.split(' ').slice(1);
     let cont = message.content.split(' ').slice(1).join(' ');
 
-    if (message.author.id == "137624084572798976") {
-    function clean(text) {
-        if (typeof (text) === 'string') {
-            return text.replace(/`/g, '`' + String.fromCharCode(8203)).replace(/@/g, '@' + String.fromCharCode(8203));
-        }
-        return text;
-    }
+    if (message.author.id === "137624084572798976") {
 
     function clean(text) {
         if (typeof text !== 'string')
@@ -22,7 +14,7 @@ exports.run = async (client, message) => {
         text = text
             .replace(/`/g, '`' + String.fromCharCode(8203))
             .replace(/@/g, '@' + String.fromCharCode(8203))
-            .replace(rege, 'You\'re so fucking gay for wanting that.')
+            .replace(rege, '(node:800) UnhandledPromiseRejectionWarning: Error: Incorrect login details were provided.')
             .replace(rege2, '21')
         return text;
     };
