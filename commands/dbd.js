@@ -32,7 +32,7 @@ exports.run = async (client, message, args) => {
             if (!args[0]) {
                 //No args
                 let embed = new Discord.MessageEmbed()
-                    .addField('__**Commands**__', 'Create a server: `' + settings.get(message.guild.id).prefix + 'dbd.js create type servername` \nServer Types: `' + settings.get(message.guild.id).prefix + 'dbd.ks create list`')
+                    .addField('__**Commands**__', 'Create a server: `' + settings.get(message.guild.id).prefix + 'dbd create type servername` \nServer Types: `' + settings.get(message.guild.id).prefix + 'dbd create list`')
                 message.channel.send(embed)
 
             } else if (args[0].toLowerCase() === "create") {
