@@ -35,5 +35,10 @@ fs.readdir('./events/', (err, files) => {
     });
 });
 
+//Error handler
+client.on('error, err => {
+          console.log("An error occured.)
+         }) 
+
 //Bot login
 client.login(config.DiscordBot.Token);
