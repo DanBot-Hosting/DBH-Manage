@@ -187,43 +187,6 @@ list.forge = (serverName, userID) => ({
     "start_on_completion": false,
     "oom_disabled": false
 })
-list.fivem = (serverName, userID) => ({
-    "name": serverName,
-    "user": userID,
-    "nest": 9,
-    "egg": 26,
-    "docker_image": "quay.io/parkervcp/pterodactyl-images:base_alpine",
-    "startup": `$(pwd)/alpine/opt/cfx-server/ld-musl-x86_64.so.1 --library-path "$(pwd)/alpine/usr/lib/v8/:$(pwd)/alpine/lib/:$(pwd)/alpine/usr/lib/" -- $(pwd)/alpine/opt/cfx-server/FXServer +set citizen_dir $(pwd)/alpine/opt/cfx-server/citizen/ +set sv_licenseKey {{FIVEM_LICENSE}} +set steam_webApiKey {{STEAM_WEBAPIKEY}} +set sv_maxplayers {{MAX_PLAYERS}} +set serverProfile default +set txAdminPort {{TXADMIN_PORT}} $( [ "$TXADMIN_ENABLE" == "1" ] || printf %s '+exec server.cfg' )`,
-    "limits": {
-        "memory": 2048,
-        "swap": 0,
-        "disk": 0,
-        "io": 500,
-        "cpu": 0
-    },
-    "environment": {
-        "FIVEM_LICENSE": "6pc7xbhxoep0ms5m5rsg09k11plzib6w",
-        "MAX_PLAYERS": "32",
-        "SERVER_HOSTNAME": "My new FXServer!",
-        "FIVEM_VERSION": "latest",
-        "DOWNLOAD_URL": null,
-        "STEAM_WEBAPIKEY": "none",
-        "TXADMIN_PORT": "40120",
-        "TXADMIN_ENABLE": "0"
-    },
-    "feature_limits": {
-        "databases": 2,
-        "allocations": 1,
-        "backups": 10
-    },
-    "deploy": {
-        "locations": [5],
-        "dedicated_ip": false,
-        "port_range": []
-    },
-    "start_on_completion": false,
-    "oom_disabled": false
-})
 list.altv = (serverName, userID) => ({
     "name": serverName,
     "user": userID,
